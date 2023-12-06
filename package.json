@@ -17,8 +17,25 @@
         "command": "postmessage.test",
         "title": "postmessage.test"
       }
-    ]
+    ],
+    "viewsContainers": {
+      "activitybar": [
+          {
+              "id": "package-explorer",
+              "title": "测试",
+              "icon": "resources/package-svgrepo-com.svg"
+          }
+      ]
   },
+  "views": {
+    "package-explorer": [
+      {
+        "id": "package-dependencies",
+        "name": "Dependencies"
+      }
+    ]
+  }
+},
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
