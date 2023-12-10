@@ -19,13 +19,6 @@ export class MyTreeDataProvider implements vscode.WebviewViewProvider {
   }
 
   private _getHtmlForWebview(webview: vscode.Webview) {
-    const scriptUri = webview.asWebviewUri(
-      vscode.Uri.joinPath(this._extensionUri, "build", "static/js/main.js")
-    );
-    const styleMainUri = webview.asWebviewUri(
-      vscode.Uri.joinPath(this._extensionUri, "build", "main.css")
-    );
-
     return `<!DOCTYPE html>
 		<html lang="en">
 		<head>
@@ -54,7 +47,7 @@ export class MyTreeDataProvider implements vscode.WebviewViewProvider {
               </body>
               <script>
                 function handleClick(e){
-                    alert("clicked"+e.target.innerText);
+                  e.target.innerText=Math.random();
                     // 向宿主发送消息
                     window.parent.postMessage({type:'init',message:e.target.innerText});
                 }

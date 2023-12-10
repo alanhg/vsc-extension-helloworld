@@ -2,7 +2,7 @@
   "name": "helloworld",
   "displayName": "helloworld",
   "description": "alanhe",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.72.0"
   },
@@ -48,7 +48,7 @@
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
     "test": "vscode-test",
-    "pack": "vsce package"
+    "pack": "vsce package --skip-license"
   },
   "devDependencies": {
     "@types/vscode": "^1.72.0",
