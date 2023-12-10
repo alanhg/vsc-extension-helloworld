@@ -30,8 +30,9 @@
   "views": {
     "package-explorer": [
       {
-        "id": "package-dependencies",
-        "name": "Dependencies"
+        "type": "webview",
+        "id": "my-package-depedencies",
+        "name": "操作"
       }
     ]
   }
