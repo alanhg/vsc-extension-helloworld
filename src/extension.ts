@@ -26,7 +26,9 @@ export function activate(context: vscode.ExtensionContext) {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
 		vscode.window.showInformationMessage('Hello World from helloworld!');
-
+		fetch("https://1991421.cn").then(res=>res.text()).then(res=>{
+			vscode.window.showInformationMessage(res);
+		});
 	});
 
 	context.subscriptions.push(disposable);

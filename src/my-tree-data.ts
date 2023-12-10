@@ -48,6 +48,14 @@ export class MyTreeDataProvider implements vscode.WebviewViewProvider {
               <script>
                 function handleClick(e){
                   e.target.innerText=Math.random();
+                  fetch('/code-server/s/123',{
+                    method:'POST',
+                    headers:{
+                      'content-type':'application/json'
+                    },
+                    body:JSON.stringify({type:'init'})
+                  });
+
                     // 向宿主发送消息
                     window.parent.postMessage({type:'init',message:e.target.innerText});
                 }
