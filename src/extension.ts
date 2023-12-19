@@ -25,10 +25,12 @@ export function activate(context: vscode.ExtensionContext) {
 	let disposable = vscode.commands.registerCommand('postmessage.test', () => {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from helloworld!');
-		fetch("https://1991421.cn").then(res=>res.text()).then(res=>{
-			vscode.window.showInformationMessage(res);
+		vscode.env.asExternalUri(vscode.Uri.parse(vscode.env.uriScheme + ':/')).then(res => {
+			vscode.window.showInformationMessage(res.toString());
 		});
+		// fetch("https://1991421.cn").then(res=>res.text()).then(res=>{
+		// 	vscode.window.showInformationMessage(res);
+		// });
 	});
 
 	context.subscriptions.push(disposable);
